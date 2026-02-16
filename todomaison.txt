@@ -1,0 +1,57 @@
+w tojo 
+-2em page (dons.php)
+Page donner les dons pour un besoin
+
+ok    -Form
+        - dropdown (region, ville)   
+            > tableau dinamique (selection checkbox > creation field en dessous pour completer)
+                - besoin (cat et detail) (en forme de l ien qui va ouvrir un field)
+        - field pour besoin argent 
+        -Bouton valider
+        
+    -/Form
+
+ok    -info requis ! 
+     > region, ville, sinistres, besoin > cat et detail  
+     model > controller > route avec data > view
+    
+ok    -Fonction (affichage)
+        getRegion, getVilleByRegion, getSinistresByVille
+        getBesoinBySinitres, getMateriauxBycat
+
+wait tojo -Fonction (insertion)
+
+------------------------------------------------
+V2
+
+OK
+changement bdd
+    > besoin_materiaux
+        + column prix unitaires
+    > materiaux -> besoin_materiaux (contient l id du materiaux) 
+    -> catergorie_besoin (faux) -> catergorie_materiaux
+
+OK
+page 
+    > achete materiaux (money = argent de dons, materiaux selon prix unitaires)
+        - donc il y a une table inventaire_materiaux pour chaque sinistres 
+        - inventaire_argent pour chaque sinistres 
+            - les dons recue sont reuni(envoyer) dans l inventaire_argent
+
+    -affichage
+        liste de les materiaux en besoin-> on peux selection (checkbox) pls materiaux -> payement (en bas) (argent dans l inventaire_argent)
+WAIT
+        apres la confirmation -> popup confirmation
+
+OK
+update 
+    tableau de bord
+        > montants d achats par ville
+
+WAIT
+page resumer 
+    > besoin total (Fonction)
+    > dons materiaux recus (historique_dons_materiaux)
+    > dons argent recus (historique_dons_argent)
+    > dons materiaux utiliser pour des achats (historique_used_materiaux)
+    > dons argent utiliser pour des achats (historique_used_argent)
