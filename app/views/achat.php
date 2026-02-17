@@ -341,14 +341,13 @@
                             <td>
                                 <strong>${besoin.nom_materiau || ''}</strong>
                                 <br><small class="text-muted">Besoin: ${besoin.quantite} ${besoin.unite}</small>
-                                <br><small class="text-success">Dispo: ${quantiteDisponible} ${besoin.unite}</small>
+                                
                             </td>
                             <td>
-                                <input type="number" class="form-control form-control-sm quantite-input" 
-                                       data-id-besoin="${id_besoin}"
-                                       data-dispo="${quantiteDisponible}"
-                                       min="0" step="0.1" value="0"
-                                       style="width: 100px;" disabled>
+                                    <input type="number" class="form-control form-control-sm quantite-input" 
+                                        data-id-besoin="${id_besoin}"
+                                        min="0" step="0.1" value="0"
+                                        style="width: 100px;" disabled>
                             </td>
                             <td>${Number(besoin.prix_unitaire || 0).toLocaleString('fr-FR')} Ar</td>
                             <td class="sous-total" data-id-besoin="${id_besoin}">0 Ar</td>
